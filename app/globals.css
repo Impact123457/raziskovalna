@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --beige: #f5f5dc;
 }
 
 @theme inline {
@@ -10,12 +11,34 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-beige: var(--beige);
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+    :root {
+        --radius: 0.5rem;
+    }
+}
+@layer utilities{
+  .divH1{
+    @apply w-[40%] h-[830px] py-7 px-6;
+  }
+  .heading{
+    @apply uppercase bg-black px-6 py-6 font-sans font-extrabold text-white text-[45px] max-w-5xl text-center;
+  }
+  .opis{
+    @apply mx-5 text-[22px] text-black;
+  }
+  .divImg{
+    @apply flex items-center gap-6 w-[60%]; 
+  }
+  .div2{
+    @apply flex max-w-full min-h-[500px] items-center;
+  }
+  .card{
+    @apply flex items-start gap-6 p-5 m-5 bg-gray-300 max-w-[800px] text-[20px];
+  }
+  .cardH1{
+    @apply font-bold text-[25px] w-[30%] text-left;
   }
 }
 
