@@ -19,26 +19,11 @@
     }
 }
 @layer utilities{
-  .divH1{
-    @apply w-[40%] h-[830px] py-7 px-6;
-  }
   .heading{
-    @apply uppercase bg-black px-6 py-6 font-sans font-extrabold text-white text-[45px] max-w-5xl text-center;
+    @apply uppercase bg-black font-sans font-extrabold text-white text-[50px] max-w-[650px] text-center;
   }
   .opis{
-    @apply mx-5 text-[22px] text-black;
-  }
-  .divImg{
-    @apply flex items-center gap-6 w-[60%]; 
-  }
-  .div2{
-    @apply flex max-w-full min-h-[500px] items-center;
-  }
-  .card{
-    @apply flex items-start gap-6 p-5 m-5 bg-gray-300 max-w-[800px] text-[20px];
-  }
-  .cardH1{
-    @apply font-bold text-[25px] w-[30%] text-left;
+    @apply mx-5 text-[12px] text-white max-w-[600px];
   }
 }
 
