@@ -20,10 +20,16 @@
 }
 @layer utilities{
   .heading{
-    @apply uppercase bg-black font-sans font-extrabold text-white text-[50px] max-w-[650px] text-center;
+    @apply uppercase bg-black font-sans font-extrabold text-white text-[45px] max-w-[600px] text-center;
   }
   .opis{
-    @apply mx-5 text-[12px] text-white max-w-[600px];
+    @apply my-3 text-[12px] text-white max-w-[550px];
+  }
+  .search{
+    @apply w-[700px]  min-h-20 bg-white border-[3px] border-black rounded-[80px] text-[18px] px-5 flex flex-row items-center gap-5;
+    }
+  .searcBtn{
+    @apply size-[50px] rounded-full bg-black flex justify-center items-center text-white;
   }
 }
 

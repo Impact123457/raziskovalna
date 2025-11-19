@@ -1,0 +1,8 @@
+- [x] Remove invalid import 'Form from ".next/form"' from SearchForm.tsx
+- [x] Add React import for useState
+- [x] Implement form with input field for website URL
+- [x] Add submit button
+- [x] Add state management for input value
+- [x] Handle form submission (log URL to console)
+- [x] Style with Tailwind CSS classes
+- [x] Test the component by running dev server
