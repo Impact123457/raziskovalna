@@ -1,4 +1,5 @@
 import Form from "next/form";
+
 const SearchForm = () =>{
 
     return(
