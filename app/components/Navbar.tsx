@@ -1,5 +1,6 @@
 import Link from "next/link"
 import Image from "next/image"
+
 const Navbar = async() =>{   
     return(
         <header className="bg-white shadow-sm font-work-sans">

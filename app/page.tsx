@@ -1,9 +1,8 @@
-import Image from "next/image";
 import SearchForm from "./components/SearchForm";
 import Link from "next/link";
 export default function Home() {
   return (
-    <>
+    <section>
       <div className="mainDIV">
         <div className="opis" />
         <h1 className="h1">
@@ -26,6 +25,6 @@ export default function Home() {
           </Link>
         </div>
       </div>
-    </>
+    </section>
   );
 }
