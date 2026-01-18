@@ -8,7 +8,7 @@ import { client } from "@/sanity/lib/client";
 
 export async function POST(req: NextRequest) {
   try {
-    const { name, email, password, surname, username } = await req.json();
+    const { name, email, password, surname } = await req.json();
 
     if (!name || !surname || !email || !password) {
       return NextResponse.json(
