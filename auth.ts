@@ -1,5 +1,71 @@
-import NextAuth from "next-auth"
- 
+import { default as NextAuth } from 'next-auth';
+import GitHub from "next-auth/providers/github"
+import { client } from "./sanity/lib/client";
+import { USER_BY_EMAIL_QUERY, USER_BY_ID_QUERY } from "./sanity/lib/queries";
+import { writeClient } from "./sanity/lib/write-client";
+import CredentialsProvider from "next-auth/providers/credentials";
+import bcrypt from "bcryptjs";
+
+let id: string | null;
+
 export const { handlers, signIn, signOut, auth } = NextAuth({
-  providers: [],
+
+  providers: [
+    CredentialsProvider({
+      name: "Credentials",
+
+      credentials: {
+        email: { label: "Email", type: "email" },
+        password: { label: "Password", type: "password" },
+      },
+
+      async authorize(credentials) {
+  if (!credentials?.email || !credentials?.password) return null;
+
+  const email = String(credentials.email);
+  const password = String(credentials.password);
+
+  const user = await client.fetch(
+  USER_BY_EMAIL_QUERY, { email });
+
+
+  if (!user) return null;
+  if (!user.password) return null;
+
+  const isCorrect = await bcrypt.compare(password, user.password);
+  if (!isCorrect) return null;
+  id = user._id;
+  return {
+    id: user._id,
+    name: user.name,
+    email: user.email,
+    emailVerified: null,
+    image: user.image,
+  };
+}
+
+    }),
+    ],
+  callbacks: {
+    async signIn() {
+      
+      return true;
+    },
+
+    async jwt({token, account, profile}){
+      if(id){
+        const user = await client.fetch(USER_BY_ID_QUERY, {
+          id: id,
+        });
+        token.id = user?._id;
+        token.provider = "credentials";
+      }
+      return token;
+    },
+
+    async session({ session, token }){
+      Object.assign(session.user, {id: token.id, imageUrl: token.imageUrl, provider: token.provider});
+      return session;
+    },
+  }
 })

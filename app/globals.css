@@ -56,10 +56,19 @@
     @apply max-w-[500px] p-10;
   }
   .input{
-    @apply w-full p-2 border border-black rounded;
+    @apply w-full rounded-xl px-3 py-2 bg-white/70 text-slate-900 placeholder-slate-500 border-2 border-white;
   }
   .logButton{
-    @apply border cursor-pointer w-full p-2 rounded;
+    @apply border cursor-pointer w-full p-2 rounded border-blue-700 bg-blue-500  text-white;
+  }
+  :hover.logButton{
+    @apply bg-blue-700;
+  }
+  .navButton{
+    @apply cursor-pointer rounded-xl bg-blue-500 text-white p-3 font-medium transition disabled:opacity-60;
+  }
+  :hover.navButton{
+    @apply bg-blue-700 border-blue-700;
   }
 }
 

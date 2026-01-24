@@ -20,26 +20,51 @@ export default function LoginPage() {
     setLoading(false);
 
     if (!res?.error) window.location.href = "/";
-    else alert("Invalid email or password");
+    else alert("Invalid email or password.");
   };
 
   return (
-    <section className="signSection">
-      <div className="signForms">
-        <h2 className="text-2xl text-black font-semibold text-center m-5">Welcome back!</h2>
-        <form onSubmit={handleLogin} className="space-y-3">
-          <input type="email" className="input" placeholder="email" onChange={(e) => setEmail(e.target.value)} required/>
-          <input type="password" className="input" placeholder="password" onChange={(e) => setPassword(e.target.value)} required/>
+    <section className="h-screen flex items-center justify-center bg-linear-to-br from-blue-900 via-blue-800 to-slate-900">
+      <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
+        <h2 className="text-2xl font-semibold text-center text-white mb-6">
+          Welcome back!
+        </h2>
 
-          <button type="submit" className="logButton border-black bg-black text-white" disabled={loading}>
+        <form onSubmit={handleLogin} className="space-y-4">
+          <input
+            type="email"
+            className="input"
+            placeholder="email"
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+
+          <input
+            type="password"
+            className="input"
+            placeholder="password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+
+          <button
+            type="submit"
+            className="logButton"
+            disabled={loading}
+          >
             {loading ? "Logging in..." : "Log In"}
           </button>
         </form>
-        {/*GitHub*/}
-        <p className="text-center">─────── or ───────</p>
-        <button onClick={() => signIn("github", {redirectTo:"/"})} className="logButton bg-white text-black border-black">Login with GitHub</button>
-        <p className="text-center">Don’t have an account?{" "}
-        <a href="/signup" className="text-blue-600 underline">Sign up</a>
+
+        <p className="text-center text-white/70 my-5">
+          ─────── or ───────
+        </p>
+
+        <p className="text-center text-white/80">
+          Don’t have an account?{" "}
+          <a href="/signup" className="underline hover:text-white">
+            Sign up
+          </a>
         </p>
       </div>
     </section>

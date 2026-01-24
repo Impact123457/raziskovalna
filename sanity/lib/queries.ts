@@ -19,7 +19,6 @@ export const USER_BY_ID_QUERY = defineQuery(
   id,
   name,
   surname,
-  bio,
   email,
   password,  
   "image": image.asset->url,
