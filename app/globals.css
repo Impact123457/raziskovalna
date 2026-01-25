@@ -50,10 +50,7 @@
     @apply rounded-4xl left-1/2 -translate-x-1/2 px-3 my-4 bg-white/80 backdrop-blur-md shadow-lg fixed top-0 z-50;
   }
   .signSection{
-    @apply flex flex-col justify-center items-center min-h-[500px] overflow-hidden my-5 px-20 text-black text-[15px];
-  }
-  .signForm{
-    @apply max-w-[500px] p-10;
+    @apply h-screen flex items-center justify-center bg-linear-to-br from-blue-900 via-blue-800 to-slate-900;
   }
   .input{
     @apply w-full rounded-xl px-3 py-2 bg-white/70 text-slate-900 placeholder-slate-500 border-2 border-white;

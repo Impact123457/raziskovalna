@@ -19,14 +19,14 @@ export default function LoginPage() {
 
     setLoading(false);
 
-    if (!res?.error) window.location.href = "/";
+    if (!res?.error) window.location.href = "/explore";
     else alert("Invalid email or password.");
   };
 
   return (
-    <section className="h-screen flex items-center justify-center bg-linear-to-br from-blue-900 via-blue-800 to-slate-900">
+    <section className="signSection">
       <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
-        <h2 className="text-2xl font-semibold text-center text-white mb-6">
+        <h2 className="text-2xl font-semibold text-center text-white p-3">
           Welcome back!
         </h2>
 

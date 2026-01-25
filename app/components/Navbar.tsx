@@ -1,9 +1,11 @@
 import Link from "next/link"
 import Image from "next/image"
-import { auth, signOut } from "@/auth";
+import { auth, signOut } from "@/auth"
+import { UserCircle } from "lucide-react";
 
 const Navbar = async() => {
-  const session = await auth();//a je user prijavlen
+  const session = await auth();
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20">
       <nav className="mx-2 flex items-center justify-between font-work-sans">
@@ -11,10 +13,11 @@ const Navbar = async() => {
           <Image
             src="/logo.png"
             alt="WebInspector logo"
-            width={70}
-            height={70}
+            width={120}
+            height={120}
           />
         </Link>
+
         <div className="flex items-center gap-3">
           {session && session?.user ?(
           <>
@@ -24,13 +27,13 @@ const Navbar = async() => {
             }}>
               <button 
                 type="submit" 
-                className="uppercase font-bold text-blue-500 cursor-pointer">
+                className="navButton">
                   Log out
               </button>
             </form>
 
             <Link href={`/user/${session?.user.id}`}>
-              <Image src="/profile.png" alt="profile icon" width={40} height={40} className="rounded-full"/>
+              <UserCircle className="text-white w-10 h-10"></UserCircle>
             </Link>
           </>
           ):(

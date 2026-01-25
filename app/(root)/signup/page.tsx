@@ -39,16 +39,42 @@ export default function RegisterPage() {
 
   return (
   <section className="signSection">
-    <div className="signForm">
-      <h2 className="text-2xl text-blue-500 font-semibold text-center m-5">
+    <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
+      <h2 className="text-2xl font-semibold text-center text-white p-3">
         Sign up!
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-3">
-        <input className="input" type="text" placeholder="name" value={name} onChange={(e) => setName(e.target.value)} required/>
-        <input className="input" type="text" placeholder="surname" value={surname} onChange={(e) => setSurname(e.target.value)} required/>
-        <input className="input" type="email" placeholder="email" value={email} onChange={(e) => setEmail(e.target.value)} required/>
-        <input className="input" type="password" placeholder="password" value={password} onChange={(e) => setPassword(e.target.value)} required/>
+        <input 
+          className="input" 
+          type="text" 
+          placeholder="name" 
+          value={name} onChange={(e) => setName(e.target.value)} 
+          required
+        />
+
+        <input 
+          className="input" 
+          type="text" 
+          placeholder="surname" 
+          value={surname} onChange={(e) => setSurname(e.target.value)} 
+          required
+        />
+
+        <input 
+          className="input" 
+          type="email" 
+          placeholder="email" 
+          value={email} onChange={(e) => setEmail(e.target.value)} 
+          required/>
+
+        <input 
+          className="input" 
+          type="password" 
+          placeholder="password"
+          value={password} onChange={(e) => setPassword(e.target.value)} 
+          required
+        />
 
       <button 
         className="logButton" 
