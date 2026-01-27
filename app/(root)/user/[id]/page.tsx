@@ -45,7 +45,7 @@ const Profile = async ({ params }: { params: { id: string } }) => {
                                 await signOut({redirectTo:"/"})
                                 }}>
                                 <button type="submit" className="border cursor-pointer p-2 rounded-xl border-blue-500 bg-blue-500 hover:bg-blue-700 text-white">
-                                    Log out
+                                    Logout
                                 </button>
                             </form>
                         </>
