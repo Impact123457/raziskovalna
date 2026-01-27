@@ -8,17 +8,12 @@ export const profileSchema = z.object({
     .nullable()
     .optional()
     .refine(
-      (file) =>
-        file === null ||
-        file === undefined ||
-        file.type === "image/jpeg" ||
-        file.type === "image/png" ||
-        file.type === "image/jpg"
-    )
-    .refine(
-      (file) =>
-        file === null ||
-        file === undefined ||
-        file.size <= 20971520
-    )
+    (file) =>
+      file == null ||
+      (
+        ["image/jpeg", "image/jpg", "image/png"].includes(file.type) &&
+        file.size <= 20 * 1024 * 1024
+      )
+)
+
 })
