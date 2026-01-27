@@ -10,7 +10,7 @@ const Profile = async ({ params }: { params: { id: string } }) => {
     const session = await auth();
     const user = await client.fetch(USER_BY_ID_QUERY, { id });
      
-    if (!user) {
+    if (!user) { 
         notFound();
     }
 
