@@ -73,7 +73,7 @@ export default function Update({user}: {user: UserType}){
             <h2 className="text-2xl font-semibold text-center text-white p-3">
                 Edit profile
             </h2>
-            <form action={formAction}>
+            <form action={formAction} encType="multipart/form-data">
                     <label className="text-white/70 my-5" htmlFor="name">
                         Name:
                     </label>

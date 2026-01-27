@@ -16,4 +16,3 @@ export const profileSchema = z.object({
         file.type === "image/jpg"
     )
 })
-
