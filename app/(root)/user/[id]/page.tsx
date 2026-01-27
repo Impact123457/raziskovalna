@@ -1,6 +1,6 @@
 import { USER_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { auth, signOut } from "@/auth";
@@ -9,6 +9,10 @@ const Profile = async ({ params }: { params: { id: string } }) => {
     const id = (await params).id;
     const session = await auth();
     const user = await client.fetch(USER_BY_ID_QUERY, { id });
+     
+    if (!user) {
+        notFound();
+    }
 
     if (!session) redirect("/");
     return(

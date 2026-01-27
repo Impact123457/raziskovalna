@@ -7,11 +7,11 @@ const Navbar = async() => {
   const session = await auth();
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-black/20">
+    <header className="bg-white">
       <nav className="mx-2 flex items-center justify-between font-work-sans">
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logoBlack.png"
             alt="WebInspector logo"
             width={100}
             height={100}
@@ -33,7 +33,7 @@ const Navbar = async() => {
             </form>
 
             <Link href={`/user/${session?.user.id}`}>
-              <UserCircle className="text-white w-10 h-10"></UserCircle>
+              <UserCircle className="text-black w-10 h-10"></UserCircle>
             </Link>
           </>
           ):(
