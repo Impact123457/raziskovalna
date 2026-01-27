@@ -37,8 +37,9 @@ export default function Update({user}: {user: UserType}){
                     file: formData.get("file") as File
                     }
                 }
+            console.log('file from formData:', formData.get("file"));
             await profileSchema.parseAsync(formValues);
-            const result = await UpdateProfile(prevState, formData, user._id);  
+            const result = await UpdateProfile(prevState, formData, user._id);
                 if(result.status == 'SUCCESS'){
                     toast.success("Your profile was updated succesfully!")
                 }
@@ -73,7 +74,7 @@ export default function Update({user}: {user: UserType}){
             <h2 className="text-2xl font-semibold text-center text-white p-3">
                 Edit profile
             </h2>
-            <form action={formAction} encType="multipart/form-data">
+            <form action={formAction}>
                     <label className="text-white/70 my-5" htmlFor="name">
                         Name:
                     </label>

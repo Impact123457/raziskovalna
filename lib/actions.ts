@@ -23,11 +23,13 @@ export const UpdateProfile= async (state: any, form: FormData, _id: string) =>{
     try{
         let result;
         if(file){
+            console.log('Uploading file:', file.name, file.size);
             const buffer = Buffer.from(await file.arrayBuffer());
 
             const uploadedAsset = await writeClient.assets.upload('image', buffer, {
                 filename: file.name,
             });
+            console.log('Uploaded asset:', uploadedAsset._id);
 
                 result = await writeClient.patch(_id).set({
                 name,
@@ -40,13 +42,16 @@ export const UpdateProfile= async (state: any, form: FormData, _id: string) =>{
                     },
                 },
             }).commit();
+            console.log('Patched with image:', result);
         }
         else{
+            console.log('No file, patching name and surname only');
             result = await writeClient.patch(_id).set({
             name,
             surname,
             }).commit();
-        } 
+            console.log('Patched without image:', result);
+        }
         return parseServerActionResponse({
             ...result,
             error: '',
@@ -54,7 +59,7 @@ export const UpdateProfile= async (state: any, form: FormData, _id: string) =>{
         })
     }
     catch(error){
-        console.log(error);
+        console.log('Error in UpdateProfile:', error);
 
         return parseServerActionResponse({
             error: JSON.stringify(error),
