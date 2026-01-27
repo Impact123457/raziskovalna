@@ -3,7 +3,6 @@ import { writeClient } from "@/sanity/lib/write-client"
 import { USER_BY_ID_QUERY } from "@/sanity/lib/queries"
 import { User } from "@/sanity/sanity.types"
 import { redirect } from "next/navigation"
-import Link from "next/link";
 import Update from "@/app/components/Update"
 
 export type UserType = Omit<User, "name" | "surname" | "email" | "image" | "imageUrl"> & {

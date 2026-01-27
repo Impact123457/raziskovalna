@@ -1,9 +1,11 @@
 import { USER_BY_ID_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { notFound, redirect } from "next/navigation";
+import { auth, signOut } from "@/auth";
 import Image from "next/image";
 import Link from "next/link";
-import { auth, signOut } from "@/auth";
+
+
 const Profile = async ({ params }: { params: { id: string } }) => {
     
     const id = (await params).id;

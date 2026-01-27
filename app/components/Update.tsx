@@ -1,8 +1,8 @@
 'use client'
 
-import { useState, useActionState } from 'react'
-import { profileSchema } from '@/lib/validation'
-import { z } from 'zod'
+import { useState, useActionState } from "react"
+import { profileSchema } from "@/lib/validation"
+import { z } from "zod"
 import { useRouter } from "next/navigation"
 import { UserType } from '../(root)/user/editProfile/[id]/page'
 import { UpdateProfile } from "@/lib/actions"
@@ -17,9 +17,10 @@ export default function Update({user}: {user: UserType}){
 
     function handleFile(file: File) {
         const url = URL.createObjectURL(file); // takoj dobiš preview
-    setFile(url);
-  }
+        setFile(url);
+    }
     const router = useRouter();
+    
     const handleFormSubmit = async (prevState: any, formData: FormData) => {
             try{
                 let formValues;
@@ -73,7 +74,9 @@ export default function Update({user}: {user: UserType}){
                 Edit profile
             </h2>
             <form action={formAction}>
-                    <label className="text-white/70 my-5" htmlFor="name">Name:</label>
+                    <label className="text-white/70 my-5" htmlFor="name">
+                        Name:
+                    </label>
                     <input 
                         id='name' 
                         name='name' 
@@ -81,9 +84,11 @@ export default function Update({user}: {user: UserType}){
                         placeholder='name' 
                         value={name} onChange={(e) => setName(e.target.value)}
                     />
-                    {errors.title && <p className='comment-form-error'>{errors.title}</p>}
+                    {errors.name && <p className='comment-form-error'>{errors.name}</p>}
 
-                    <label className="text-white/70 my-5" htmlFor="surname">Surname:</label>
+                    <label className="text-white/70 my-5" htmlFor="surname">
+                        Surname:
+                    </label>
                     <input 
                         id='surname' 
                         name='surname' 
@@ -91,9 +96,11 @@ export default function Update({user}: {user: UserType}){
                         placeholder='surname' 
                         value={surname} onChange={(e) => setSurname(e.target.value)}
                     />
-                    {errors.title && <p className='comment-form-error'>{errors.title}</p>}
+                    {errors.surname && <p className='comment-form-error'>{errors.surname}</p>}
 
-                    <label className="text-white/70 my-5" htmlFor="file">Image:</label>
+                    <label className="text-white/70 my-5" htmlFor="file">
+                        Image:
+                    </label>
                     <div className="relative">
                     <div className="w-[100px] h-[100px] rounded-full" style={{backgroundImage: `url('${file}')`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
                         <input 
@@ -108,7 +115,7 @@ export default function Update({user}: {user: UserType}){
                             if (f) handleFile(f);
                             }}
                         />
-                    {errors.title && <p className='comment-form-error'>{errors.title}</p>}
+                    {errors.file && <p className='comment-form-error'>{errors.file}</p>}
                     </div>
                 <button type='submit' className="logButton my-3" disabled={isPending}>
                     {isPending ? 'Submitting...' : 'Update profile'}
