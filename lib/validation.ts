@@ -15,4 +15,10 @@ export const profileSchema = z.object({
         file.type === "image/png" ||
         file.type === "image/jpg"
     )
+    .refine(
+      (file) =>
+        file === null ||
+        file === undefined ||
+        file.size <= 20971520
+    )
 })
