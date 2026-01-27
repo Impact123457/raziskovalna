@@ -1,8 +1,8 @@
 import { z } from "zod";
 
 export const profileSchema = z.object({
-    username: z.string().min(3).max(50),
-    bio: z.string().max(100),
+    name: z.string().min(1).max(50),
+    surname: z.string().min(1).max(50),
     file: z
     .instanceof(File)
     .nullable()
