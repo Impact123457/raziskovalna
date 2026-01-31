@@ -14,6 +14,5 @@ export const profileSchema = z.object({
         ["image/jpeg", "image/jpg", "image/png"].includes(file.type) &&
         file.size <= 20 * 1024 * 1024
       )
-)
-
+    )
 })
