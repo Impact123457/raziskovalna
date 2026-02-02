@@ -2,7 +2,7 @@ import Form from "next/form";
 import { Earth } from "lucide-react"
 const SearchForm = () => {
   return (
-    <Form action="/" scroll={false} className="flex items-center w-full max-w-150 mx-auto rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm focus-within:ring-2">
+    <Form action="/result" scroll={false} className="flex items-center w-full max-w-150 mx-auto rounded-xl border border-gray-200 bg-white px-4 py-3 shadow-sm focus-within:ring-2">
       <input
         name="query"
         defaultValue=""
@@ -12,7 +12,7 @@ const SearchForm = () => {
 
       <button type="submit"
         className="rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700">
-        Scan Website 
+          Scan Website 
       </button>
     </Form>
   );

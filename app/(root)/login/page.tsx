@@ -24,16 +24,16 @@ export default function LoginPage() {
   };
 
   return (
-    <section className="signSection">
+    <section className="bg-white h-[450px] flex items-center justify-center">
       <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
-        <h2 className="text-2xl font-semibold text-center text-white p-3">
+        <h2 className="text-2xl font-semibold text-center text-blue-500 p-3">
           Welcome back!
         </h2>
 
         <form onSubmit={handleLogin} className="space-y-4">
           <input
             type="email"
-            className="input"
+            className="input2"
             placeholder="email"
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -41,7 +41,7 @@ export default function LoginPage() {
 
           <input
             type="password"
-            className="input"
+            className="input2"
             placeholder="password"
             onChange={(e) => setPassword(e.target.value)}
             required
@@ -56,13 +56,13 @@ export default function LoginPage() {
           </button>
         </form>
 
-        <p className="text-center text-white/70 my-5">
+        <p className="text-center my-5">
           ─────── or ───────
         </p>
 
-        <p className="text-center text-white/80">
+        <p className="text-center">
           Don’t have an account?{" "}
-          <a href="/signup" className="underline hover:text-white">
+          <a href="/signup" className="underline text-blue-500 hover:text-blue-700">
             Sign up
           </a>
         </p>

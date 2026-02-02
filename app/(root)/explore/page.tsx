@@ -1,6 +1,9 @@
 import SearchForm from "@/app/components/SearchForm";
 
 export default function Home() {
+  const result = ({ 
+    
+  })
   return (
     <>
     <div className="mainDIV">  

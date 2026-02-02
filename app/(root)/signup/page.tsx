@@ -38,15 +38,15 @@ export default function RegisterPage() {
 };
 
   return (
-  <section className="signSection">
+  <section className="bg-white h-[450px] flex items-center justify-center">
     <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
-      <h2 className="text-2xl font-semibold text-center text-white p-3">
+      <h2 className="text-2xl font-semibold text-center text-blue-500 p-3">
         Sign up!
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <input 
-          className="input" 
+          className="input2" 
           type="text" 
           placeholder="name" 
           value={name} onChange={(e) => setName(e.target.value)} 
@@ -54,7 +54,7 @@ export default function RegisterPage() {
         />
 
         <input 
-          className="input" 
+          className="input2" 
           type="text" 
           placeholder="surname" 
           value={surname} onChange={(e) => setSurname(e.target.value)} 
@@ -62,14 +62,14 @@ export default function RegisterPage() {
         />
 
         <input 
-          className="input" 
+          className="input2" 
           type="email" 
           placeholder="email" 
           value={email} onChange={(e) => setEmail(e.target.value)} 
           required/>
 
         <input 
-          className="input" 
+          className="input2" 
           type="password" 
           placeholder="password"
           value={password} onChange={(e) => setPassword(e.target.value)} 
