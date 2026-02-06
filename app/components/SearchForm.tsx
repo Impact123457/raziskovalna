@@ -58,7 +58,7 @@ const SearchForm = () => {
 
       {/* Loading message */}
       {loading && (
-        <p className="mt-2 text-center text-gray-500 text-sm animate-pulse">
+        <p className="mt-2 text-center text-white text-sm animate-pulse">
           Please wait, analysis can take a few minutes…
         </p>
       )}
