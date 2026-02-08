@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
+import { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
 
 type Issue = {
   code: string;
@@ -20,6 +20,14 @@ type PageResult = {
 };
 
 export default function ResultPage() {
+  return (
+    <Suspense fallback={<p className="text-center text-gray-400 animate-pulse">Loading…</p>}>
+      <ResultContent />
+    </Suspense>
+  );
+}
+
+function ResultContent() {
   const searchParams = useSearchParams();
   const scannedUrl = searchParams.get("url") || "";
   const [results, setResults] = useState<PageResult[] | null>(null);
@@ -61,7 +69,9 @@ export default function ResultPage() {
 
     return (
       <div className={`p-5 mb-6 rounded-xl shadow-md ${color}`}>
-        <h3 className="text-2xl font-bold mb-4 border-b pb-2">{title} ({items.length})</h3>
+        <h3 className="text-2xl font-bold mb-4 border-b pb-2">
+          {title} ({items.length})
+        </h3>
         <div className="space-y-3 max-h-[300px] overflow-y-auto">
           {items.map((item, i) => (
             <div
@@ -69,8 +79,12 @@ export default function ResultPage() {
               className="p-4 rounded-lg bg-white shadow-sm border border-gray-200 hover:shadow-md transition"
             >
               <p className="font-semibold text-gray-800">{item.message}</p>
-              <p className="text-xs text-gray-500"><strong>WCAG:</strong> {item.code}</p>
-              <p className="text-xs text-gray-500"><strong>Selector:</strong> {item.selector}</p>
+              <p className="text-xs text-gray-500">
+                <strong>WCAG:</strong> {item.code}
+              </p>
+              <p className="text-xs text-gray-500">
+                <strong>Selector:</strong> {item.selector}
+              </p>
               <pre className="bg-gray-100 p-2 rounded text-xs overflow-x-auto">{item.context}</pre>
             </div>
           ))}
@@ -79,7 +93,8 @@ export default function ResultPage() {
     );
   };
 
-  if (!scannedUrl) return <p className="text-center text-gray-600 mt-10">No URL provided.</p>;
+  if (!scannedUrl)
+    return <p className="text-center text-gray-600 mt-10">No URL provided.</p>;
 
   return (
     <div className="bg-gray-50 min-h-screen p-10 space-y-10">
