@@ -53,7 +53,7 @@ export default function Update({user}: {user: UserType}){
 
                     console.log("\n \n \n \n \n",error , "\n \n \n \n \n");
 
-                    toast.error("Please check your inputs and try again.");
+                    toast.error("Prosim preverite svoj vnos.");
                     return {...prevState, error: 'Updating failed', status:'ERROR'};
                 }
                 toast.error("Unexpected error.");
@@ -76,31 +76,31 @@ export default function Update({user}: {user: UserType}){
             </h2>
             <form action={formAction}>
                     <label className="text-white/70 my-5" htmlFor="name">
-                        Name:
+                        Ime:
                     </label>
                     <input 
                         id='name' 
                         name='name' 
                         className='input' 
-                        placeholder='name' 
+                        placeholder='ime' 
                         value={name} onChange={(e) => setName(e.target.value)}
                     />
                     {errors.name && <p className='comment-form-error'>{errors.name}</p>}
 
                     <label className="text-white/70 my-5" htmlFor="surname">
-                        Surname:
+                        Priimek:
                     </label>
                     <input 
                         id='surname' 
                         name='surname' 
                         className='input' 
-                        placeholder='surname' 
+                        placeholder='priimek' 
                         value={surname} onChange={(e) => setSurname(e.target.value)}
                     />
                     {errors.surname && <p className='comment-form-error'>{errors.surname}</p>}
 
                     <label className="text-white/70 my-5" htmlFor="file">
-                        Image:
+                        Profilna slika:
                     </label>
                     <div className="relative">
                     <div className="w-[100px] h-[100px] rounded-full" style={{backgroundImage: `url('${file}')`, backgroundSize: 'cover', backgroundPosition: 'center'}}></div>
@@ -119,7 +119,7 @@ export default function Update({user}: {user: UserType}){
                     {errors.file && <p className='comment-form-error'>{errors.file}</p>}
                     </div>
                 <button type='submit' className="logButton my-3" disabled={isPending}>
-                    {isPending ? 'Submitting...' : 'Update profile'}
+                    {isPending ? '...' : 'Posodobi profil'}
                 </button>
             </form>
         </div>

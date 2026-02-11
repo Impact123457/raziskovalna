@@ -8,14 +8,14 @@ export default async function Home() {
       <div className="mainDIV">
         <div className="opis" />
           <h1 className="h1">
-            Welcome to <span className="text-blue-300">WebInspector</span>
+            Dobrodošli v <span className="text-blue-300">WebInspector</span>
           </h1>
 
           <p className="text">
-            <span className="font-semibold text-white">WebInspector</span> analyzes any website you submit and provides
-            a clear report on accessibility and usability. It identifies issues that
-            impact user experience and highlights areas that don’t meet modern
-            accessibility standards.
+            <span className="font-semibold text-white">WebInspector</span> analizira vsako spletno
+             mesto, ki ga pošljete, in zagotovi jasno poročilo o dostopnosti in uporabnosti. 
+             Prepozna težave, ki vplivajo na uporabniško izkušnjo, in izpostavi področja, 
+             ki ne ustrezajo sodobnim standardom dostopnosti.
           </p>
 
           <div className="flex gap-2">
@@ -23,11 +23,11 @@ export default async function Home() {
               <></>
             ):(
               <Link href="/login" className="btn1">
-                Log in
+                Prijava
               </Link>
             )}
               <Link href="/explore" className="btn2">
-                Start exploring
+                Začni analizirati
               </Link>
         </div>
       </div>

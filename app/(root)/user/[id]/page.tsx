@@ -30,15 +30,15 @@ const Profile = async ({ params }: { params: { id: string } }) => {
                             className="w-[100px] h-[100px] rounded-full  border-4 border-neutral-200 object-cover shadow-md"
                         />
                         <p className="mt-8 font-bold text-2xl text-neutral-900">
-                            {user.name || "first name"}
+                            {user.name || "ime"}
                         </p> 
                         <p className="mt-8 font-bold text-2xl text-neutral-900">
-                            {user.surname || "last name"}
+                            {user.surname || "priimek"}
                         </p> 
                     </div>
                     <div className="flex m-3 gap-2">
                         <Link href={`./editProfile/${user?._id}`} className="border cursor-pointer p-2 rounded-xl border-blue-500 bg-blue-500 hover:bg-blue-700 text-white">
-                            Edit profile
+                            Uredi profil
                         </Link>
                         {session && session?.user ?(
                         <>
@@ -47,7 +47,7 @@ const Profile = async ({ params }: { params: { id: string } }) => {
                                 await signOut({redirectTo:"/"})
                                 }}>
                                 <button type="submit" className="border cursor-pointer p-2 rounded-xl border-blue-500 bg-blue-500 hover:bg-blue-700 text-white">
-                                    Log out
+                                    Izpis
                                 </button>
                             </form>
                         </>

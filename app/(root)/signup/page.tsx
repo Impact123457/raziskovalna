@@ -30,10 +30,10 @@ export default function RegisterPage() {
   setLoading(false);
 
   if (res.ok) {
-    alert("Registration successful! You can now log in.");
+    alert("Registracija je uspela! Sedaj se lahko prijavite.");
     router.push("../login");
   } else {
-    alert(data.error || "Something went wrong");
+    alert(data.error || "Nekaj je šlo narobe.");
   }
 };
 
@@ -41,14 +41,14 @@ export default function RegisterPage() {
   <section className="bg-white h-[450px] flex items-center justify-center">
     <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
       <h2 className="text-2xl font-semibold text-center text-blue-500 p-3">
-        Sign up!
+        Registrirajte se!
       </h2>
 
       <form onSubmit={handleSubmit} className="space-y-3">
         <input 
           className="input2" 
           type="text" 
-          placeholder="name" 
+          placeholder="ime" 
           value={name} onChange={(e) => setName(e.target.value)} 
           required
         />
@@ -56,7 +56,7 @@ export default function RegisterPage() {
         <input 
           className="input2" 
           type="text" 
-          placeholder="surname" 
+          placeholder="priimek" 
           value={surname} onChange={(e) => setSurname(e.target.value)} 
           required
         />
@@ -71,14 +71,14 @@ export default function RegisterPage() {
         <input 
           className="input2" 
           type="password" 
-          placeholder="password"
+          placeholder="geslo"
           value={password} onChange={(e) => setPassword(e.target.value)} 
           required
         />
 
       <button 
         className="logButton" 
-        type="submit" disabled={loading}> {loading ? "Registering..." : "Register"} 
+        type="submit" disabled={loading}> {loading ? "Registriranje..." : "Registriraj se"} 
       </button>
 
       </form>

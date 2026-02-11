@@ -99,7 +99,7 @@ function ResultContent() {
   return (
     <div className="bg-gray-50 min-h-screen p-10 space-y-10">
       <h1 className="text-3xl font-bold text-center text-gray-800">
-        Results for <span className="text-blue-500">{scannedUrl}</span>
+        Rezultati za spletno stran: <span className="text-blue-500">{scannedUrl}</span>
       </h1>
 
       {loading && (

@@ -42,7 +42,7 @@ const SearchForm = () => {
           name="query"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder="Enter website URL (https://example.com)"
+          placeholder="Vnesite URL (https://primer.com)"
           className="flex-1 outline-none text-gray-800 placeholder-gray-400 text-sm"
           disabled={loading}
         />
@@ -52,14 +52,14 @@ const SearchForm = () => {
           disabled={loading}
           className="ml-2 rounded-lg bg-blue-600 px-5 py-2 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
         >
-          {loading ? "Analyzing…" : "Scan Website"}
+          {loading ? "Analiziram..." : "Analiziraj"}
         </button>
       </form>
 
       {/* Loading message */}
       {loading && (
         <p className="mt-2 text-center text-white text-sm animate-pulse">
-          Please wait, analysis can take a few minutes…
+          Prosim počakajte, analiza lahko vzame nekaj minut...
         </p>
       )}
     </div>

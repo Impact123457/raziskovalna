@@ -27,7 +27,7 @@ export default function LoginPage() {
     <section className="bg-white h-[450px] flex items-center justify-center">
       <div className="w-full max-w-sm rounded-2xl p-8 backdrop-blur-xl bg-white/20 shadow-2xl border border-white/30">
         <h2 className="text-2xl font-semibold text-center text-blue-500 p-3">
-          Welcome back!
+          Dobrodošli nazaj!
         </h2>
 
         <form onSubmit={handleLogin} className="space-y-4">
@@ -42,7 +42,7 @@ export default function LoginPage() {
           <input
             type="password"
             className="input2"
-            placeholder="password"
+            placeholder="geslo"
             onChange={(e) => setPassword(e.target.value)}
             required
           />
@@ -52,7 +52,7 @@ export default function LoginPage() {
             className="logButton"
             disabled={loading}
           >
-            {loading ? "Logging in..." : "Log In"}
+            {loading ? "..." : "Prijava"}
           </button>
         </form>
 
@@ -61,9 +61,9 @@ export default function LoginPage() {
         </p>
 
         <p className="text-center">
-          Don’t have an account?{" "}
+          Še nimate računa?{" "}
           <a href="/signup" className="underline text-blue-500 hover:text-blue-700">
-            Sign up
+            Registrirajte se
           </a>
         </p>
       </div>

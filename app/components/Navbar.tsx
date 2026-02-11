@@ -28,7 +28,7 @@ const Navbar = async() => {
               <button 
                 type="submit" 
                 className="navButton">
-                  Log out
+                  Izpis
               </button>
             </form>
 
@@ -42,7 +42,7 @@ const Navbar = async() => {
                 <button 
                   type="submit" 
                   className="navButton">
-                    Log in
+                    Prijava
                 </button>
               </Link>
             </>
