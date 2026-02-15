@@ -18,7 +18,6 @@
 
 1. Kloniraj projekt:
 
-```git clone``` [movieBox](https://github.com/Impact123457/moviebox)
 
 2. Namesti odvisnosti:
 
@@ -69,7 +68,7 @@ da uredite profil imate na strani kjer se izpiše vaš profil gumb *Uredi profil
 - **Frontend / Backend:** [Next.js](https://nextjs.org/) (JavaScript)
 - **Upravljanje podatkov:** [Sanity](https://www.sanity.io/)
 - **Gostovanje:** [Vercel](https://vercel.com/)
-- **API za dostopnost:** [Web Accessibility Scanner](https://www.webaccessibility.com/api)
+- **API za dostopnost:** [Web Accessibility Scanner](https://apify.com/accessibility_team/a11y-scanner-public/api)
 
 ## ✍️Avtorica
 
@@ -79,6 +78,4 @@ da uredite profil imate na strani kjer se izpiše vaš profil gumb *Uredi profil
 ---
 ## Dodatno
 
-- **Mentor:** Roman Herlah
-- **Avtentikacija:** Implementirano z **NextAuth**.  
-- **Open-source community:** Next.js, Sanity, TailwindCSS, shadcn/ui, Vercel.
+Za analizo spletnih strani, sem uporabila API Web Accessibility Scanner, ki ni popolnoma zastonj. Za začetek imam zastonj pribljižno 200 analiz, zato bi prosila, da ste pri uporabi pozorni na ta detail.
