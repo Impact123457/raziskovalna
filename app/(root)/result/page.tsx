@@ -103,7 +103,7 @@ function ResultContent() {
       </h1>
 
       {loading && (
-        <p className="text-center text-gray-400 animate-pulse">Scanning the website…</p>
+        <p className="text-center text-gray-400 animate-pulse">Skeniram spletno stran…</p>
       )}
 
       {results &&
