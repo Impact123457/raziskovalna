@@ -10,8 +10,6 @@ export default async function Home() {
           <h1 className="h1">
             Dobrodošli v <span className="text-blue-300">WebInspector</span>
           </h1>
-          
-          Dostopen splet ni izbira — je standard.
 
           <p className="text">
             <span className="font-semibold text-white">WebInspector</span> analizira vsako spletno
