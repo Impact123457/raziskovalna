@@ -17,6 +17,7 @@ export default async function Home() {
              Prepozna težave, ki vplivajo na uporabniško izkušnjo, in izpostavi področja, 
              ki ne ustrezajo sodobnim standardom dostopnosti.
           </p>
+          
 
           <div className="flex gap-2">
             {session && session?.user ?(

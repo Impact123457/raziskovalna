@@ -8,12 +8,12 @@ export default function Home() {
     <>
     <div className="mainDIV">  
       <div>
-        <h1 className="h1">
-            Dostopen splet ni izbira<span className="text-blue-300"> je standard.</span>
+        <h1 className="h2">
+            Dostopen splet ni izbira<span className="text-blue-300">— je standard.</span>
         </h1>
         <div>
           <p className="text">
-            Skener vam pokaže, kaj je narobe in kako to odpraviti. Hitro, jasno in učinkovito. 
+            Skener vam pokaže, kaj je narobe in kako to odpraviti. hitro, jasno in učinkovito. 
             Vnesite svoj URL, da začnete zdaj!
           </p>
         </div>
