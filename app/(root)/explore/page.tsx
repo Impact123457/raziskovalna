@@ -9,7 +9,10 @@ export default function Home() {
     <div className="mainDIV">  
       <div>
         <h1 className="h2">
-            Dostopen splet ni izbira<span className="text-blue-300">je standard.</span>
+            Dostopen splet ni izbira
+        </h1>
+        <h1 className="mainDIV">
+          <span className="text-blue-300">je standard.</span>
         </h1>
         <div>
           <p className="text">
