@@ -13,7 +13,7 @@ export default function Home() {
         </h1>
         <div>
           <p className="text">
-            Skener vam pokaže, kaj je narobe in kako to odpraviti. hitro, jasno in učinkovito. 
+            Skener vam pokaže, kaj je narobe in kako to odpraviti. Hitro, jasno in učinkovito. 
             Vnesite svoj URL, da začnete zdaj!
           </p>
         </div>
