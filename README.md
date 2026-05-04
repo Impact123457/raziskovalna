@@ -14,6 +14,11 @@
 - Prikaz podrobnih rezultatov, vključno z napakami, opozorili in kontrastnimi problemi.
 - Rezultati so dostopni v različnih formatih: JSON, CSV, Excel, HTML.
 
+## Dostop do spletne strani
+
+- Spletna stran je dostopna na https://webinspector.emaskruba.eu/ do 4. 5. 2026
+- Spletna stran je vedno dostopna na https://raziskovalna.vercel.app/ na tem linku je dostopna vedno
+
 ### Nameščanje
 
 1. Kloniraj projekt:
